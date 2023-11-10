@@ -1,0 +1,3 @@
++++
+template = "index.tera.html"
++++
