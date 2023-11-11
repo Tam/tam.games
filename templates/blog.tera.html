@@ -1,10 +1,11 @@
 {% extends "base.tera.html" %}
 
 {% block content %}
-    <a href="/">Back</a>
-    <h1 class="title">
-        {{ section.title }}
-    </h1>
+    <header>
+        <h1>
+            {{ section.title }}
+        </h1>
+    </header>
     <ul>
         {# If you are using pagination, section.pages will be empty. You need to use the paginator object #}
         {% for page in section.pages %}

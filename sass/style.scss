@@ -49,17 +49,19 @@ html {
 	to { --hue: 359 }
 }
 
-body::after {
-	content: '';
-	position:fixed;
-	z-index: -1;
-	top:0;
-	left:0;
-	width:100vw;
-	height:100vh;
-	background: linear-gradient(to bottom, lch(3 9 var(--hue)), #000);
-	mix-blend-mode:multiply;
-	animation: hue infinite linear 10s;
+body {
+	&::before {
+		content: '';
+		position:fixed;
+		top:0;
+		left:0;
+		width:100vw;
+		height:100vh;
+		z-index: -1;
+		background: linear-gradient(to bottom, lch(3 9 var(--hue)), #000);
+		mix-blend-mode:multiply;
+		animation: hue infinite linear 10s;
+	}
 }
 
 pre {
@@ -74,8 +76,23 @@ code {
 	tab-size: 5;
 }
 
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 16px;
+
+	a:first-child {
+		font-size: 24px;
+		font-weight: bold;
+		text-decoration: none;
+	}
+}
+
+.header,
 main {
 	width: calc(100% - 40px);
 	max-width: 800px;
 	margin: auto;
+	padding: 24px;
 }

@@ -11,8 +11,15 @@
         tam.games
     </title>
     <link rel="stylesheet" href="{{ get_url(path='style.css', cachebust=true) }}" />
+    {% block rss %}
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
+    {% endblock %}
 </head>
 <body>
+<header class="header">
+    <a href="/">tam.games</a>
+    <a href="/blog">Blog</a>
+</header>
 <main>
     {% block content %}{% endblock %}
 </main>
